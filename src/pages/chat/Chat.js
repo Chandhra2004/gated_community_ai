@@ -89,7 +89,7 @@ const ChatPage = () => {
     return () => {
       socket.off("receive_message", handleReceiveMessage); // Clean up properly
     };
-  }, [userId, selectedUser?._id]); // ✅ Add dependencies to prevent stale values
+  }, []); // ✅ Add dependencies to prevent stale values
   
   // Fetch selected user data
   useEffect(() => {
