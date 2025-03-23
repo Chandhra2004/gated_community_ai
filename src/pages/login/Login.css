@@ -1,3 +1,4 @@
+/* Base Styles */
 .login-cool {
   display: flex;
   justify-content: center;
@@ -6,6 +7,7 @@
   background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   position: relative;
   overflow: hidden;
+  padding: 20px; /* Add padding for small screens */
 }
 
 .login-particles {
@@ -72,10 +74,11 @@
 
 .login-input-group {
   position: relative;
+  width: 85%; /* Ensure full width for responsiveness */
 }
 
 .login-cool-input {
-  width: 90%;
+  width: 100%; /* Change from 90% to 100% for consistency */
   padding: 12px 40px 12px 15px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -163,8 +166,8 @@
 }
 
 .login-orbit-ring.login-ring-2 {
-  animation-delay: -100s;
-  animation-duration: 10s;
+  animation-delay: -5s; /* Adjusted from -100s for smoother effect */
+  animation-duration: 15s;
 }
 
 .login-orbit-ring:nth-child(1) {
@@ -191,4 +194,105 @@
 @keyframes login-orbit {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .login-cool {
+    padding: 15px; /* Reduce padding on tablets */
+  }
+
+  .login-cool-box {
+    max-width: 350px; /* Slightly smaller max width */
+    padding: 30px; /* Reduce padding */
+  }
+
+  .login-title {
+    font-size: 2rem; /* Smaller title */
+  }
+
+  .login-subtitle {
+    font-size: 1rem; /* Slightly smaller subtitle */
+  }
+
+  .login-message {
+    font-size: 0.9rem; /* Smaller message */
+    padding: 8px;
+  }
+
+  .login-cool-input {
+    font-size: 0.9rem; /* Smaller input text */
+    padding: 10px 35px 10px 12px; /* Adjust padding */
+  }
+
+  .login-input-icon {
+    font-size: 1.1rem; /* Slightly smaller icon */
+    right: 12px;
+  }
+
+  .login-cool-button {
+    font-size: 1rem; /* Smaller button text */
+    padding: 10px 18px;
+  }
+
+  .login-register-link {
+    font-size: 0.9rem; /* Smaller link text */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-cool {
+    padding: 10px; /* Even less padding on mobiles */
+  }
+
+  .login-cool-box {
+    max-width: 300px; /* Further reduce max width */
+    padding: 20px; /* More compact padding */
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .login-message {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  .login-cool-input {
+    font-size: 0.85rem;
+    padding: 8px 30px 8px 10px;
+  }
+
+  .login-input-icon {
+    font-size: 1rem;
+    right: 10px;
+  }
+
+  .login-cool-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .login-register-link {
+    font-size: 0.8rem;
+  }
+
+  .login-orbit-ring:nth-child(1) {
+    width: 150%; /* Reduce ring size on small screens */
+    height: 150%;
+    top: -25%;
+    left: -25%;
+  }
+
+  .login-orbit-ring:nth-child(2) {
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+  }
 }

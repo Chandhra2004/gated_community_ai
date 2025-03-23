@@ -1,3 +1,4 @@
+/* Base Styles */
 .match-cool {
   display: flex;
   justify-content: center;
@@ -6,6 +7,7 @@
   background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   position: relative;
   overflow: hidden;
+  padding: 20px; /* Add padding for small screens */
 }
 
 .match-particles {
@@ -58,11 +60,11 @@
   position: relative;
   max-width: 500px;
   margin: 0 auto;
+  width: 100%; /* Ensure full width responsiveness */
 }
 
 .match-cool-input {
-  width: 500px;
-  margin-left: 0%;
+  width: 100%; /* Change from fixed 500px to 100% */
   padding: 12px 40px 12px 15px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -100,7 +102,7 @@
   overflow: hidden;
   transition: all 0.3s;
   max-width: 200px;
-  margin-left: 40%;
+  margin: 0 auto; /* Center button instead of margin-left */
 }
 
 .match-cool-button:disabled {
@@ -186,9 +188,9 @@
   border-radius: 5px;
   color: #fff;
   width: 100px;
-  appearance: none; /* Remove default dropdown arrow */
+  appearance: none;
   background-image: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(255, 255, 255, 0.1)),
-                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>'); /* Custom arrow */
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>');
   background-repeat: no-repeat;
   background-position: right 10px center, right 10px center;
   background-size: auto, 10px;
@@ -204,9 +206,8 @@
   outline: none;
 }
 
-/* Ensure options inherit styles */
 .match-credits-field option {
-  background: #24243e; /* Match background gradient */
+  background: #24243e;
   color: #fff;
 }
 
@@ -234,46 +235,6 @@
   opacity: 0.7;
   font-style: italic;
   margin-top: 20px;
-}
-
-.match-chat-box {
-  margin-top: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.match-chat-title {
-  font-size: 1.5rem;
-  color: #00d4ff;
-  margin-bottom: 15px;
-}
-
-.match-chat-messages {
-  max-height: 200px;
-  overflow-y: auto;
-  margin-bottom: 15px;
-}
-
-.match-message {
-  margin: 5px 0;
-  padding: 8px;
-  border-radius: 5px;
-}
-
-.match-sent {
-  background: rgba(0, 212, 255, 0.2);
-  text-align: right;
-}
-
-.match-received {
-  background: rgba(255, 107, 107, 0.2);
-  text-align: left;
-}
-
-.match-chat-input {
-  display: flex;
-  gap: 10px;
 }
 
 /* Decorative Orbit Rings */
@@ -319,4 +280,174 @@
 @keyframes match-orbit {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .match-cool {
+    padding: 15px; /* Reduce padding on tablets */
+  }
+
+  .match-cool-box {
+    max-width: 600px; /* Reduce max width */
+    padding: 30px;
+  }
+
+  .match-title {
+    font-size: 2rem; /* Smaller title */
+  }
+
+  .match-subtitle {
+    font-size: 1rem;
+  }
+
+  .match-input-section {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .match-cool-input {
+    font-size: 0.9rem;
+    padding: 10px 35px 10px 12px;
+  }
+
+  .match-input-icon {
+    font-size: 1.1rem;
+    right: 12px;
+  }
+
+  .match-cool-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+    max-width: 180px;
+  }
+
+  .match-users-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller min width */
+    gap: 15px;
+  }
+
+  .match-user-card {
+    padding: 15px;
+  }
+
+  .match-user-name {
+    font-size: 1.1rem;
+  }
+
+  .match-user-skills {
+    font-size: 0.9rem;
+  }
+
+  .match-expanded-details {
+    font-size: 0.85rem;
+  }
+
+  .match-credits-field {
+    width: 80px;
+    padding: 6px;
+  }
+
+  .match-action-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .match-no-results {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .match-cool {
+    padding: 10px; /* Even less padding on mobiles */
+  }
+
+  .match-cool-box {
+    max-width: 100%; /* Full width on mobile */
+    padding: 20px;
+  }
+
+  .match-title {
+    font-size: 1.8rem;
+  }
+
+  .match-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .match-input-section {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .match-cool-input {
+    font-size: 0.85rem;
+    padding: 8px 30px 8px 10px;
+  }
+
+  .match-input-icon {
+    font-size: 1rem;
+    right: 10px;
+  }
+
+  .match-cool-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    max-width: 150px;
+  }
+
+  .match-users-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 10px;
+  }
+
+  .match-user-card {
+    padding: 12px;
+  }
+
+  .match-user-name {
+    font-size: 1rem;
+  }
+
+  .match-user-skills {
+    font-size: 0.85rem;
+  }
+
+  .match-expanded-details {
+    font-size: 0.8rem;
+  }
+
+  .match-credits-input {
+    flex-direction: column; /* Stack credits input and button */
+    gap: 5px;
+  }
+
+  .match-credits-field {
+    width: 100%; /* Full width on mobile */
+    padding: 5px;
+  }
+
+  .match-action-button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .match-no-results {
+    font-size: 0.9rem;
+  }
+
+  .match-orbit-ring:nth-child(1) {
+    width: 150%; /* Reduce ring size on small screens */
+    height: 150%;
+    top: -25%;
+    left: -25%;
+  }
+
+  .match-orbit-ring:nth-child(2) {
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+  }
 }

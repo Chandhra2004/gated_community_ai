@@ -55,7 +55,7 @@ const Register = () => {
            a tutor, or a designer, AI SkillConnect connects you with skilled individuals nearby. 
          </p>
          <p>
-           Register now to join a community where your skills are valued and your needs are met ******.
+           Register now to join a community where your skills are valued and your needs are met.
          </p>
         <div className="feature-bubbles">
           <div className="bubble">Skill Exchange</div>

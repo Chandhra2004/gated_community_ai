@@ -1,3 +1,4 @@
+/* Base Styles */
 .validate-cool {
   display: flex;
   justify-content: center;
@@ -6,6 +7,7 @@
   background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   position: relative;
   overflow: hidden;
+  padding: 20px; /* Add padding for small screens */
 }
 
 .validate-particles {
@@ -141,7 +143,7 @@
   opacity: 0.9;
 }
 
-/* New styles for correct/incorrect answers */
+/* Styles for correct/incorrect answers */
 .validate-correct {
   color: #2ecc71 !important;
   font-weight: 600;
@@ -223,7 +225,6 @@
   margin-left: 5px;
 }
 
-/* Radio button styles for correct/incorrect */
 .validate-radio:disabled {
   opacity: 0.6;
 }
@@ -235,8 +236,6 @@
 .validate-radio:checked:disabled + .validate-incorrect {
   box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
 }
-
-/* End of new styles */
 
 .validate-submit {
   background: linear-gradient(45deg, #ff6b6b, #ff8787);
@@ -301,4 +300,161 @@
 @keyframes validate-orbit {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .validate-cool {
+    padding: 15px; /* Reduce padding on tablets */
+  }
+
+  .validate-cool-box {
+    max-width: 500px; /* Reduce max width */
+    padding: 30px;
+  }
+
+  .validate-title {
+    font-size: 2rem; /* Smaller title */
+  }
+
+  .validate-subtitle {
+    font-size: 1rem;
+  }
+
+  .validate-cool-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  .validate-question-card {
+    padding: 15px;
+  }
+
+  .validate-question-text {
+    font-size: 1.1rem;
+  }
+
+  .validate-option-text {
+    font-size: 0.9rem;
+  }
+
+  .validate-radio {
+    width: 18px;
+    height: 18px;
+  }
+
+  .validate-answer-feedback {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .validate-correct-message::before {
+    font-size: 1rem;
+  }
+
+  .validate-score-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .validate-cool {
+    padding: 10px; /* Even less padding on mobiles */
+  }
+
+  .validate-cool-box {
+    max-width: 100%; /* Full width on mobile */
+    padding: 20px;
+  }
+
+  .validate-title {
+    font-size: 1.8rem;
+  }
+
+  .validate-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .validate-cool-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    margin: 8px 0;
+  }
+
+  .validate-cool-form {
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .validate-question-card {
+    padding: 12px;
+  }
+
+  .validate-question-text {
+    font-size: 1rem;
+  }
+
+  .validate-options {
+    gap: 8px;
+  }
+
+  .validate-option-label {
+    gap: 8px;
+  }
+
+  .validate-radio {
+    width: 16px;
+    height: 16px;
+  }
+
+  .validate-option-text {
+    font-size: 0.85rem;
+  }
+
+  .validate-correct,
+  .validate-incorrect {
+    padding: 3px 8px;
+  }
+
+  .validate-correct::after,
+  .validate-incorrect::after {
+    margin-left: 8px;
+  }
+
+  .validate-answer-feedback {
+    font-size: 0.85rem;
+    padding: 6px;
+    margin-top: 10px;
+  }
+
+  .validate-correct-message::before {
+    font-size: 0.9rem;
+  }
+
+  .validate-incorrect-message span {
+    padding: 1px 4px;
+  }
+
+  .validate-score {
+    margin-top: 20px;
+  }
+
+  .validate-score-title {
+    font-size: 1.2rem;
+  }
+
+  .validate-orbit-ring:nth-child(1) {
+    width: 150%; /* Reduce ring size on small screens */
+    height: 150%;
+    top: -25%;
+    left: -25%;
+  }
+
+  .validate-orbit-ring:nth-child(2) {
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+  }
 }
