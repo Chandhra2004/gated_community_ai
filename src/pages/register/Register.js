@@ -52,10 +52,10 @@ const Register = () => {
         <p>
           AI SkillConnect is a revolutionary web and mobile application designed to foster collaboration within gated communities.
            Our platform allows users to exchange skills, helping each other complete tasks efficiently. Whether you need a handyman,
-           a tutor, or a designer, AI SkillConnect connects you with skilled individuals nearby.
+           a tutor, or a designer, AI SkillConnect connects you with skilled individuals nearby. 
          </p>
          <p>
-           Register now to join a community where your skills are valued and your needs are met.
+           Register now to join a community where your skills are valued and your needs are met ******.
          </p>
         <div className="feature-bubbles">
           <div className="bubble">Skill Exchange</div>
