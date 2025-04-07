@@ -71,9 +71,20 @@ const SkillMatching = () => {
     navigate(`/chat/${user._id}`);
   };
 
+  // Navigate to Dashboard
+  const handleDashboardClick = () => {
+    navigate('/dashboard');
+  };
+
   return (
     <div className="match-container match-cool">
       <div className="match-particles"></div>
+      {/* Navigation Bar */}
+      <nav className="match-nav">
+        <button className="match-nav-button" onClick={handleDashboardClick}>
+          Dashboard
+        </button>
+      </nav>
       <div className="match-box match-cool-box">
         <h3 className="match-title">
           <span className="match-ai-gradient">Skill</span> Matching

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
@@ -65,7 +64,7 @@ const ChatPage = () => {
     };
 
     fetchConversations();
-  },  [userId,selectedUserId, selectedUser, navigate]);
+  }, [userId, selectedUserId, selectedUser, navigate]);
 
   useEffect(() => {
     const handleReceiveMessage = (newMessage) => {
@@ -97,7 +96,6 @@ const ChatPage = () => {
       console.log("Fetching selected user for ID:", selectedUserId); 
       axios.get(`${BACKEND_URL}/api/users/${selectedUserId}`)
         .then((res) => {
-          
           setSelectedUser(res.data);
         })
         .catch((err) => {
@@ -199,13 +197,24 @@ const ChatPage = () => {
 
   const handleConversationSelect = (user) => {
     setSelectedUser(user);
-    navigate(`/chat/${user._id}` , { replace: true });
+    navigate(`/chat/${user._id}`, { replace: true });
+  };
+
+  // Navigate to Dashboard
+  const handleDashboardClick = () => {
+    navigate('/dashboard');
   };
 
   return (
     <div className="chat-container chat-cool">
       <div className="chat-particles"></div>
-      <div className="chat-box chat-cool-box">
+      {/* Navigation Bar */}
+      <nav className="chat-nav">
+        <button className="chat-nav-button" onClick={handleDashboardClick}>
+          Dashboard
+        </button>
+      </nav>
+      <div className="chat-box chat-cool-box" style={{ marginTop: '70px' }}> {/* Adjusted margin-top */}
         <div className="chat-sidebar">
           <h3 className="chat-sidebar-title">Conversations</h3>
           <div className="chat-conversations">

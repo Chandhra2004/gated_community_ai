@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import './SkillValidation.css';
 
 const SkillValidation = () => {
@@ -9,6 +10,7 @@ const SkillValidation = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [feedback, setFeedback] = useState({});
+  const navigate = useNavigate(); // Initialize navigate
 
   const fetchQuestions = async () => {
     setLoading(true);
@@ -117,10 +119,22 @@ const SkillValidation = () => {
     return "validate-option-text";
   };
 
+  // Navigate to Dashboard
+  const handleDashboardClick = () => {
+    navigate('/dashboard');
+  };
+
   return (
     <div className="validate-container validate-cool">
       {/* Animated Background Particles */}
       <div className="validate-particles"></div>
+
+      {/* Navigation Bar */}
+      <nav className="validate-nav">
+        <button className="validate-nav-button" onClick={handleDashboardClick}>
+          Dashboard
+        </button>
+      </nav>
 
       {/* Main Content */}
       <div className="validate-box validate-cool-box">

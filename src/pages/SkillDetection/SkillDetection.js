@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import './SkillDetection.css';
 
 const SkillDetection = () => {
@@ -7,6 +8,7 @@ const SkillDetection = () => {
   const [skills, setSkills] = useState([]);
   const [userId, setUserId] = useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
 
   // Retrieve userId from localStorage on component mount
   useEffect(() => {
@@ -51,10 +53,22 @@ const SkillDetection = () => {
     }
   };
 
+  // Navigate to Dashboard
+  const handleDashboardClick = () => {
+    navigate('/dashboard');
+  };
+
   return (
     <div className="skill-container skill-cool">
       {/* Animated Background Particles */}
       <div className="skill-particles"></div>
+
+      {/* Navigation Bar */}
+      <nav className="skill-nav">
+        <button className="skill-nav-button" onClick={handleDashboardClick}>
+          Dashboard
+        </button>
+      </nav>
 
       {/* Main Content */}
       <div className="skill-box skill-cool-box">
