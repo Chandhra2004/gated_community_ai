@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { io } from "socket.io-client";
+
 
 import "./SkillMatching.css";
 
-// const socket = io(process.env.REACT_APP_BACKEND_URL, { path: "/chat" });
+
 
 const SkillMatching = () => {
   const [paragraph, setParagraph] = useState("");
@@ -13,7 +13,7 @@ const SkillMatching = () => {
   const [credits, setCredits] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  // const userId = localStorage.getItem("userId");
+  
 
   const findMatchingUsers = async () => {
     setLoading(true);
@@ -28,7 +28,7 @@ const SkillMatching = () => {
       if (data.success) {
         setMatchedUsers(data.matches);
         setCredits(
-          data.matches.reduce((acc, user) => ({ ...acc, [user._id]: 1 }), {}) // Default credit to 1
+          data.matches.reduce((acc, user) => ({ ...acc, [user._id]: 1 }), {}) 
         );
       } else {
         setMatchedUsers([]);
@@ -53,7 +53,7 @@ const SkillMatching = () => {
   
       const data = await response.json();
   
-      // Update the matchedUsers state with the new credits
+      
       setMatchedUsers((prevUsers) =>
         prevUsers.map((user) =>
           user._id === userId ? { ...user, credits: user.credits + credits[userId] } : user
@@ -71,7 +71,7 @@ const SkillMatching = () => {
     navigate(`/chat/${user._id}`);
   };
 
-  // Navigate to Dashboard
+  
   const handleDashboardClick = () => {
     navigate('/dashboard');
   };

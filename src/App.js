@@ -11,15 +11,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/register" />} /> {/* Redirect root to register */}
+        <Route path="/" element={<Navigate to="/register" />} /> {}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/detect-skills" element={<SkillDetection />} />
         <Route path="/match-skills" element={<SkillMatching />} />
         <Route path="/skills-validate" element={<SkillValidation />} />
-        <Route path="/chat" element={<ChatPage />} /> {/* General chat */}
-        <Route path="/chat/:userId" element={<ChatPage />} /> {/* Specific user */}
+        <Route path="/chat" element={<ChatPage />} /> {}
+        <Route path="/chat/:userId" element={<ChatPage />} /> {}
 
       </Routes>
     </Router>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import './SkillValidation.css';
 
 const SkillValidation = () => {
@@ -10,7 +10,7 @@ const SkillValidation = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [feedback, setFeedback] = useState({});
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
   const fetchQuestions = async () => {
     setLoading(true);
@@ -60,11 +60,11 @@ const SkillValidation = () => {
         setScore(res.data.score);
         setSubmitted(true);
         
-        // Create feedback object to track correct/incorrect answers
+        
         const feedbackData = {};
         
         if (res.data.questionResults) {
-          // If your backend now returns question results
+          
           res.data.questionResults.forEach(result => {
             feedbackData[result.question] = {
               userAnswer: result.userAnswer,
@@ -73,8 +73,7 @@ const SkillValidation = () => {
             };
           });
         } else {
-          // If your backend doesn't return detailed results yet,
-          // we'll request the questions again to compare
+          
           try {
             const appData = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/skills/questions/${userId}`);
             if (appData.data.success && appData.data.questions) {

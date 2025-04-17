@@ -34,7 +34,7 @@ const ChatPage = () => {
   const token = localStorage.getItem("token");
   const { userId: selectedUserId } = useParams();
   const navigate = useNavigate();
-  const messagesContainerRef = useRef(null);  // Changed to reference the container
+  const messagesContainerRef = useRef(null);  
 
   // Check authentication
   useEffect(() => {
@@ -73,7 +73,7 @@ const ChatPage = () => {
         (newMessage.sender === selectedUser?._id && newMessage.receiver === userId)
       ) {
         setMessages((prev) => {
-          // Prevent duplicate messages
+          
           if (!prev.some((msg) => msg._id === newMessage._id)) {
             return [...prev, newMessage];
           }
@@ -82,13 +82,13 @@ const ChatPage = () => {
       }
     };
   
-    socket.off("receive_message"); // Remove any existing listener first
+    socket.off("receive_message"); 
     socket.on("receive_message", handleReceiveMessage);
   
     return () => {
-      socket.off("receive_message", handleReceiveMessage); // Clean up properly
+      socket.off("receive_message", handleReceiveMessage); 
     };
-  }, []); // ✅ Add dependencies to prevent stale values
+  }, []); 
   
   // Fetch selected user data
   useEffect(() => {
@@ -133,10 +133,10 @@ const ChatPage = () => {
     if (selectedUser) {
       const room = `${userId}${selectedUser._id}`;
   
-      // Leave any previously joined room
+      
       socket.emit("leave_room", room);
   
-      // Join the new room
+      
       socket.emit("join_room", room);
   
       fetchMessages();
@@ -151,7 +151,7 @@ const ChatPage = () => {
   }, [selectedUser, userId, fetchMessages]);
   
 
-  // Scroll to bottom of messages container when messages update
+  
   useEffect(() => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
@@ -200,7 +200,7 @@ const ChatPage = () => {
     navigate(`/chat/${user._id}`, { replace: true });
   };
 
-  // Navigate to Dashboard
+  
   const handleDashboardClick = () => {
     navigate('/dashboard');
   };

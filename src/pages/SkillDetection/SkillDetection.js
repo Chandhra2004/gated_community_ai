@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import './SkillDetection.css';
 
 const SkillDetection = () => {
@@ -8,9 +8,9 @@ const SkillDetection = () => {
   const [skills, setSkills] = useState([]);
   const [userId, setUserId] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
-  // Retrieve userId from localStorage on component mount
+  
   useEffect(() => {
     const storedUserId = localStorage.getItem("userId");
 
